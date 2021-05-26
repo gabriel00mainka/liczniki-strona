@@ -3,12 +3,20 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
     <title>Stan licznika</title>
-<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="stylesheet" href="style1.css" type="text/css">
 <script type="text/javascript" src="timer.js"></script>
+<script type="text/javascript" language="javascript">
+	var naszaWarstwa = document.getElementById("naszaWarstwa");
+	</script>
 </head>
     
 <body onload="odliczanie();">
-
+	<!-- <div class="green"> -->
+		<div id="zegar"></div>
+	</div>
+	<!-- <div class="red"> -->
+		<div class="zmiana"></div>
+	</div>
 <div class="container">
 	<div class="circle outer">
 	  <div class="circle inner">
@@ -30,5 +38,10 @@
 	</div>
   </div>
 </br>
+<div id="naszaWarstwa" onclick="akcja();">Tutaj jakiś tekst</div>
+
+
+<p>Here is my variable: {{ variable }}</p>
+
 </body>
 </html>

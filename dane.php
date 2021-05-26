@@ -23,13 +23,13 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
     <title>Wyswietlanie w tabeli</title>
-    <link rel="stylesheet" href="styl.css" type="text/css">
-    <script type="text/javascript" src="timer.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="timer2.js"></script>
 </head>
     
 <body onload="odliczanie();">
     <div class="center">
-    
+    <!-- <div class="green"></div> -->
     <div id="zegar"></div>
     
     </div>

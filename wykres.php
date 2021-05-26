@@ -11,7 +11,7 @@
 		$date_stop = $_SESSION['date_stop'];
 		$time_start = $_SESSION['time_start'];
 		$time_stop = $_SESSION['time_stop'];
-		$number = $_SESSION['number']-1;
+		$number = $_SESSION['number'];
 
 	    $zapytanie = "SELECT * FROM msrts_15 WHERE id_d='$number' AND id_c=0 AND date_time>='$date_start $time_start' AND date_time<='$date_stop $time_stop'";
 	    $rezultat = mysqli_query($polaczenie, $zapytanie);
@@ -24,9 +24,7 @@
 	    	$y = $row['msrt'];
 	    	array_push($dataPoints, array("x" => $i, "y" => $y));
 		$row = mysqli_fetch_assoc($rezultat);
-	    }    
-		
-		
+	    }    	
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +32,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
     <title>Wykres</title>
-<link rel="stylesheet" href="styl.css" type="text/css">
+<link rel="stylesheet" href="style.css" type="text/css">
 <script>
 window.onload = function () {
  

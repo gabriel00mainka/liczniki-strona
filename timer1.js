@@ -16,10 +16,9 @@ function odliczanie()
 		
 		var sekunda = dzisiaj.getSeconds();				/*Pobranie sekundy*/
 		if (sekunda<10) sekunda = "0"+sekunda;			/*Wyświetlanie zera przez pojedynczymi cyframi*/
-		
-		var x = 123;
+
 		/*komputer bierze cały dokument i wyszukaj w nim używając ID element który ma przypisany identyfikator o nazwie "zegar"*/
 		document.getElementById("zegar").innerHTML = dzien+"/"+miesiac+"/"+rok+" | "+godzina+":"+minuta+":"+sekunda;
-		document.getElementById("x").innerHTML = x;
+
 		setTimeout("odliczanie()",1000);
 	}
