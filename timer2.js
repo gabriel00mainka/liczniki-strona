@@ -1,3 +1,13 @@
+// function func1()
+// 	{
+// 		document.getElementById('cls').className = "nav1";	// czerwony
+// 	}          
+
+// function func2()
+// 	{
+// 		document.getElementById('cls').className = "nav2";	// zielony
+// 	}
+
 function odliczanie()
 	{
 		var dzisiaj = new Date();
@@ -19,6 +29,13 @@ function odliczanie()
 
 		/*komputer bierze cały dokument i wyszukaj w nim używając ID element który ma przypisany identyfikator o nazwie "zegar"*/
 		document.getElementById("zegar").innerHTML = dzien+"/"+miesiac+"/"+rok+" | "+godzina+":"+minuta+":"+sekunda;
-
 		setTimeout("odliczanie()",1000);
 	}
+$(document).ready(function()
+{
+	$("#div_refresh").load("load.php");
+	setInterval(function() 
+	{
+		$("#div_refresh").load("load.php");
+	}, 1000);
+});

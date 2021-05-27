@@ -23,7 +23,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
     <title>Wyswietlanie w tabeli</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="styl.css" type="text/css">
     <script type="text/javascript" src="timer2.js"></script>
 </head>
     
@@ -33,7 +33,7 @@
     <div id="zegar"></div>
     
     </div>
-    <input type="button" value="Powrót do strony głównej" onClick="location.href='index.html';"></br>
+    <input type="button" value="Powrót do strony głównej" onClick="location.href='index.php';"></br>
     <div class="center">
     <!-- <div id="zegar"></div> -->
         </br>
@@ -49,7 +49,7 @@
                 // $zapytanie1 = "SELECT * FROM msrts_15 WHERE id_c=0 ORDER BY date_time DESC LIMIT 20";
                 $zapytanie1 = "SELECT * FROM msrts_15 WHERE id_d='$number' AND id_c=0 AND date_time>='$date_start $time_start' AND date_time<='$date_stop $time_stop' ORDER BY date_time DESC";
                 $zapytanie2 = "SELECT * FROM msrts_15 WHERE id_d='$number' AND id_c=0 ORDER BY date_time DESC LIMIT 1";
-                echo"$zapytanie1";
+                // echo"$zapytanie1";
                 // echo "$number";
                 $rezultat = mysqli_query($polaczenie, $zapytanie1);
                 $rezultat2 = mysqli_query($polaczenie, $zapytanie2);

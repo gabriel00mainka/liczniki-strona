@@ -66,7 +66,7 @@ chart.render();
 <body>
 
 <input type="button" value="Zobacz tabelę" onClick="location.href='dane.php';"></br></br>
-<input type="button" value="Powrót do strony głównej" onClick="location.href='index.html';"></br></br>
+<input type="button" value="Powrót do strony głównej" onClick="location.href='index.php';"></br></br>
 
 <!-- <form action="" method="POST">
 Ustaw intrewał osi Y: 

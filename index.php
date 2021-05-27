@@ -1,20 +1,33 @@
+<?php
+// ini_set("display_errors", 0);
+// require_once "dbconnect.php";
+// $polaczenie = mysqli_connect($host, $user, $password);
+// mysqli_query($polaczenie, "SET CHARSET utf8");
+// mysqli_query($polaczenie, "SET NAMES 'utf8' COLLATE 'utf8_polish_ci'");
+// mysqli_select_db($polaczenie, $database);
+
+// $zapytanie = "SELECT * FROM status_program";
+// $rezultat = mysqli_query($polaczenie, $zapytanie);
+// $ile = mysqli_num_rows($rezultat);
+?>
+
 <!DOCTYPE html>
 <html lang=\"pl-PL\">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
-    <title>Stan licznika</title>
-<link rel="stylesheet" href="styl.css" type="text/css">
-<script type="text/javascript" src="timer2.js"></script>
+    <title>Wyswietlanie w tabeli</title>
+    <link rel="stylesheet" href="styl.css" type="text/css">
+	<!-- src="timer2.js" -->
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript" src="timer2.js"></script>
 </head>
-    
+<!-- onload="odliczanie();" -->
 <body onload="odliczanie();">
+<div id="div_refresh"></div>
 <div class="center">
-	<div id="cls">
-		<div id="zegar"></div>
-	</div>
-	<ol>Projekt zespołowy - zdalne czytanie liczników energii elektrycznej</ol>
+<div id="zegar"></div>
+<ol>Projekt zespołowy - zdalne czytanie liczników energii elektrycznej</ol>
 </div>
-
 </br>
 <div class="content">
 	<div class="white">
