@@ -18,7 +18,7 @@
 <div class="content">
 	<div class="white">
 		<p style="text-indent: 5%; ">
-		Jest to strona internetowa przeznaczona do zdalnego czytania liczników. Konieczne jest uzupełnienie wszystkich pól w tabeli poniżej aby wyświetlić żądane pomiary.
+		Jest to strona internetowa przeznaczona do zdalnego czytania liczników. Konieczne jest uzupełnienie wszystkich pól w tabeli poniżej, aby wyświetlić żądane pomiary.
 		</p>
 		</br></br>
 
@@ -39,7 +39,7 @@
 					<select name="select1" style="width:145px; height:30px;">
 						<option value="wybierz_opcje" selected>Wybierz opcje</option>
 						<option name="wykres" value="wykres">Wykres</option>
-						<option name="tabela" value="tabela">Tebela</option>
+						<option name="tabela" value="tabela">Tabela</option>
 					</select>
 				</td>
 			</tr>
