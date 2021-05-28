@@ -24,18 +24,17 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
     <title>Wyswietlanie w tabeli</title>
     <link rel="stylesheet" href="styl.css" type="text/css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="timer2.js"></script>
 </head>
     
 <body onload="odliczanie();">
+    <div id="div_refresh"></div>
     <div class="center">
-    <!-- <div class="green"></div> -->
-    <div id="zegar"></div>
-    
+        <div id="zegar"></div>
     </div>
     <input type="button" value="Powrót do strony głównej" onClick="location.href='index.php';"></br>
     <div class="center">
-    <!-- <div id="zegar"></div> -->
         </br>
         Aby zobaczyć pomiary przedstawione na wykresie w canvas js, naciśnij poniższy przycisk.</br></br>
         <input type="button" value="Zobacz wykres" onClick="location.href='wykres.php';"></br></br>

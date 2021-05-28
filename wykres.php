@@ -32,39 +32,40 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
     <title>Wykres</title>
-<link rel="stylesheet" href="style.css" type="text/css">
-<script>
-window.onload = function () {
- 
-var chart = new CanvasJS.Chart("chartContainer", {
-	theme: "light2", // "light1", "light2", "dark1", "dark2"
-	animationEnabled: true,
-	zoomEnabled: true,
-	title: {
-		text: "Zużycie energii"
-	},
-	axisX:{
-	title: "Numer pomiaru",
-	gridDashType: "line",
-	gridThickness: 1
-	},
-	axisY:{
-	title: "Zużycie [kWh]",
-	interval: 1
-	},
-	data: [{
-		type: "area",     
-		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-	}]
-});
-chart.render();
- 
-}
-</script>
+	<link rel="stylesheet" href="styl.css" type="text/css">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript" src="timer2.js"></script>
+	<script>
+		window.onload = function ()
+		{
+		var chart = new CanvasJS.Chart("chartContainer", {
+			theme: "light2", // "light1", "light2", "dark1", "dark2"
+			animationEnabled: true,
+			zoomEnabled: true,
+			title: {
+				text: "Zużycie energii"
+			},
+			axisX:{
+			title: "Numer pomiaru",
+			gridDashType: "line",
+			gridThickness: 1
+			},
+			axisY:{
+			title: "Zużycie [kWh]",
+			interval: 1
+			},
+			data: [{
+				type: "area",     
+				dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+			}]
+			});
+			chart.render();
+		}
+	</script>
 </head>
     
 <body>
-
+<div id="div_refresh"></div>
 <input type="button" value="Zobacz tabelę" onClick="location.href='dane.php';"></br></br>
 <input type="button" value="Powrót do strony głównej" onClick="location.href='index.php';"></br></br>
 

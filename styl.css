@@ -36,39 +36,23 @@ body
 	color:#000000;
 }
 
-/* .green
-{
-	width:100%;
-	padding: 8px 0;
-	background-color: #31d309;
-	text-align: center;
-	border-top: 1px solid #188f18;
-	border-bottom: 1px solid #188f18;
-}
-.red
-{
-	width:100%;
-	padding: 8px 0;
-	background-color: #e60000;
-	text-align: center;
-	border-top: 1px solid #751b1b;
-	border-bottom: 1px solid #751b1b;
-} */
 .nav1
 {
-	width:100%;
+	/* width:100%;
 	padding: 5px 0;
 	background-color: #e62e00;
 	text-align: center;
 	border-top: 1px solid #751b1b;
-	border-bottom: 1px solid #751b1b;
+	border-bottom: 1px solid #751b1b; */
+	position: relative; height: auto; border: 5px solid #e62e00;
 }
 .nav2
 {
-	width:100%;
+	/* width:100%;
 	padding: 5px 0;
 	background-color: #68e600;
 	text-align: center;
-	border-top: 1px solid #56af04;
-	border-bottom: 1px solid #56af04;
+	border-top: 1px solid #4a9702;
+	border-bottom: 1px solid #4a9702; */
+	position: relative; height: auto; border: 5px solid #68e600;
 }
