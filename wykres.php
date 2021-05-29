@@ -32,7 +32,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
     <title>Wykres</title>
-	<link rel="stylesheet" href="styl.css" type="text/css">
+	<link rel="stylesheet" href="style.css" type="text/css">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script type="text/javascript" src="timer2.js"></script>
 	<script>

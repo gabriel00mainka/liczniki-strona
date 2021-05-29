@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
     <title>Wyswietlanie w tabeli</title>
-    <link rel="stylesheet" href="styl.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script type="text/javascript" src="timer2.js"></script>
 </head>
@@ -20,7 +20,7 @@
 		<p style="text-indent: 5%; ">
 		Jest to strona internetowa przeznaczona do zdalnego czytania liczników. Konieczne jest uzupełnienie wszystkich pól w tabeli poniżej, aby wyświetlić żądane pomiary.
 		</p>
-		</br></br>
+		</br>
 
 		<table width="500" align="center" border="1" bordercolor="#999999"  cellpadding="0" cellspacing="0">
 			<tr>
@@ -72,10 +72,43 @@
 					<input type="submit" name="submit" value="Zobacz pomiary" style=" background:LightGray; width:500px; height:30px;">
 				</td>
 			</tr>
-					</form>
+					</form>		
 
-		</table>
+		</table></br></br>
+		<!-- <div class="center">
+		Aby pobrać wszystkie pomiary naciśnij przycisk.
+		</div> -->
+	
+		<div class="center">
+			<!-- <input type="submit" name="submit" value="Pobierz" style=" background:LightGray; width:500px; height:30px;" onClick="location.href='excel.php';"> -->
+			<!-- </br></br> -->
+			<form action="action.php" method="post">
+			Pobierz pomiary z licznika numer: <select name="select2" style="width:120px; height:30px;">
+												<option value="wybierz_opcje" selected>Wybierz opcje</option>
+												<option name="wszystkie" value="wszystkie">wszystkie</option>
+												<option name="1" value="1">1</option>
+												<option name="2" value="2">2</option>
+												<option name="3" value="3">3</option>
+												<option name="4" value="4">4</option>
+												<option name="5" value="5">5</option>
+												</select>
+			z przedziału czasowego od: 
+			<input type="date" style="width:130px; height:25px;" id="start_date1" name="date_start1" value="2021-04-20" min="2021-04-01" max="2080-12-31">
+			<input type="time" style="width:70px; height:25px;" id="start_time1" name="time_start1" value="00:00" min="00:00" max="23:59" required>
+			do: 
+			<input type="date" style="width:130px; height:25px;" id="stop_date1" name="date_stop1" value="2021-05-24" min="2021-03-01" max="2080-12-31">
+			<input type="time" style="width:70px; height:25px;" id="stop_time1" name="time_stop1" value="23:59" min="00:00" max="23:59" required>
+			</br></br>
+			<input type="submit" name="submit" value="Pobierz" style=" background:LightGray; width:500px; height:30px;" onClick="location.href='excel.php';">
+			</form>
+		</div>
 	</div>
+</div>
+</br>
+<div class="center">
+
+<!-- <input type="button" name="run" value="Uruchom program"></br> -->
+
 </div>
 </body>
 </html>

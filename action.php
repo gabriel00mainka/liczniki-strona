@@ -31,6 +31,84 @@
                 break;
         }
     }
+
+    if(isset($_POST['select2']))
+    {
+        $action2 = $_POST['select2'];
+        switch ($action2) 
+        {
+            case 'wszystkie':
+                session_start();
+                $_SESSION['select2'] = $_POST['select2'];
+                $_SESSION['date_start1'] = $_POST['date_start1'];
+                $_SESSION['date_stop1'] = $_POST['date_stop1'];
+                $_SESSION['time_start1'] = $_POST['time_start1'];
+                $_SESSION['time_stop1'] = $_POST['time_stop1'];
+                // $_SESSION['number1'] = $_POST['number'];
+                header("Location: excel.php");
+                exit();
+                break;
+            case '1':
+                session_start();
+                $_SESSION['select2'] = $_POST['select2'];
+                $_SESSION['date_start1'] = $_POST['date_start1'];
+                $_SESSION['date_stop1'] = $_POST['date_stop1'];
+                $_SESSION['time_start1'] = $_POST['time_start1'];
+                $_SESSION['time_stop1'] = $_POST['time_stop1'];
+                // $_SESSION['number1'] = $_POST['number'];
+                header("Location: excel.php");
+                exit();
+                break;
+            case '2':
+                session_start();
+                $_SESSION['select2'] = $_POST['select2'];
+                $_SESSION['date_start1'] = $_POST['date_start1'];
+                $_SESSION['date_stop1'] = $_POST['date_stop1'];
+                $_SESSION['time_start1'] = $_POST['time_start1'];
+                $_SESSION['time_stop1'] = $_POST['time_stop1'];
+                // $_SESSION['number1'] = $_POST['number'];
+                header("Location: excel.php");
+                exit();
+                break;
+            case '3':
+                session_start();
+                $_SESSION['select2'] = $_POST['select2'];
+                $_SESSION['date_start1'] = $_POST['date_start1'];
+                $_SESSION['date_stop1'] = $_POST['date_stop1'];
+                $_SESSION['time_start1'] = $_POST['time_start1'];
+                $_SESSION['time_stop1'] = $_POST['time_stop1'];
+                // $_SESSION['number1'] = $_POST['number'];
+                header("Location: excel.php");
+                exit();
+                break;
+            case '4':
+                session_start();
+                $_SESSION['select2'] = $_POST['select2'];
+                $_SESSION['date_start1'] = $_POST['date_start1'];
+                $_SESSION['date_stop1'] = $_POST['date_stop1'];
+                $_SESSION['time_start1'] = $_POST['time_start1'];
+                $_SESSION['time_stop1'] = $_POST['time_stop1'];
+                // $_SESSION['number1'] = $_POST['number'];
+                header("Location: excel.php");
+                exit();
+                break;
+            case '5':
+                session_start();
+                $_SESSION['select2'] = $_POST['select2'];
+                $_SESSION['date_start1'] = $_POST['date_start1'];
+                $_SESSION['date_stop1'] = $_POST['date_stop1'];
+                $_SESSION['time_start1'] = $_POST['time_start1'];
+                $_SESSION['time_stop1'] = $_POST['time_stop1'];
+                // $_SESSION['number1'] = $_POST['number'];
+                header("Location: excel.php");
+                exit();
+                break;
+            default:
+                echo "Wróć do strony głównej i uzupełnij z którego licznika chcesz pobrać pomiary!</br>";
+                // echo "$value";
+                break;
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +121,7 @@
         
     <body>
         <div class="center">
-            <input type="button" style="width:200px; height:40px;" value="Powrót do strony głównej" onClick="location.href='index.html';">
+            <input type="button" style="width:200px; height:40px;" value="Powrót do strony głównej" onClick="location.href='index.php';">
         </br>
         </div>
     </body>

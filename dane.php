@@ -23,7 +23,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
     <title>Wyswietlanie w tabeli</title>
-    <link rel="stylesheet" href="styl.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="timer2.js"></script>
 </head>
@@ -65,8 +65,7 @@
                     $a = shell_exec('python3 1.py');
                     // $number += 1;
                     echo "Pomiary wyświetlane z licznika numer ".$number."</br>";
-                    echo'Aktualny stan licznika wynosi: ';
-                    echo $a;
+                    echo'Aktualny stan licznika wynosi: '.$a;
                     echo'<input type="button" value="Zczytaj aktualny stan licznika" onClick="window.location.reload()"></br>';
                     echo "Najnowszy pomiar: ".$a2."</br>";
                     echo "Ilość pomiarów w bazie w zadanym przedziale: ".$ile;
