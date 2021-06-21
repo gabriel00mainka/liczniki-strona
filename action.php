@@ -116,7 +116,7 @@
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"> 
         <title>Błąd</title>
-        <link rel="stylesheet" href="styl.css" type="text/css">
+        <link rel="stylesheet" href="style.css" type="text/css">
     </head>
         
     <body>

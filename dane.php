@@ -38,8 +38,8 @@
         </br>
         Aby zobaczyć pomiary przedstawione na wykresie w canvas js, naciśnij poniższy przycisk.</br></br>
         <input type="button" value="Zobacz wykres" onClick="location.href='wykres.php';"></br></br>
-        Aby zobaczyć pomiary przedstawione na wykresie w Power BI, naciśnij poniższy przycisk.</br></br>
-        <input type="button" value="Zobacz wykres" onClick="window.location='https://app.powerbi.com/groups/me/reports/d12d419c-21b0-42ab-844b-a113b59616b0?ctid=d0da435b-a7e7-4d74-a4ae-f72cf8f3b2db';"></br></br>
+        <!-- Aby zobaczyć pomiary przedstawione na wykresie w Power BI, naciśnij poniższy przycisk.</br></br>
+        <input type="button" value="Zobacz wykres" onClick="window.location='https://app.powerbi.com/groups/me/reports/d12d419c-21b0-42ab-844b-a113b59616b0?ctid=d0da435b-a7e7-4d74-a4ae-f72cf8f3b2db';"></br></br> -->
     </div>
     <div class="content">    
         <table width="800" align="center" border="1" bordercolor="#8a8a8a"  cellpadding="0" cellspacing="0">

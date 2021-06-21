@@ -51,6 +51,8 @@
             // $excelData->getActiveSheet()->getColumnDimension('A')->setWidth(true);
             $excelData .= implode("\t" ,array_values($rowData))."\n";
             // $excelData->autoFitRow(0);
+            
+
         } 
     }else
     { 

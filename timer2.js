@@ -39,3 +39,12 @@ $(document).ready(function()
 		$("#div_refresh").load("load.php");
 	}, 1000);
 });
+
+// function sendRequest()
+// {
+// 	var xhr = new XMLHttpRequest();
+// 	var url = "check.py";
+// 	xhr.open("POST",url,true);
+// 	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+// 	xhr.send();
+// }

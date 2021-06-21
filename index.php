@@ -44,6 +44,15 @@
 				</td>
 			</tr>
 			<tr>
+			<td>Rodzaj danych</td>
+			<td>
+			<select name="select3" style="width:145px; height:30px;">
+						<option value="wybierz_opcje" selected>Wybierz opcje</option>
+						<option name="liczydło" value="liczydło">liczydło</option>
+						<option name="profile" value="profile">profile</option>
+					</select>
+			</td>
+			<tr>
 				<td>Data od</td>
 				<td>
 					<input type="date" style="width:140px; height:25px;" id="start_date" name="date_start" value="2021-04-20" min="2021-04-01" max="2080-12-31">
@@ -105,10 +114,20 @@
 	</div>
 </div>
 </br>
-<div class="center">
+<!-- <div class="center">
 
-<!-- <input type="button" name="run" value="Uruchom program"></br> -->
+<button type="button" onClick=sendRequest()>run</button>
 
-</div>
+</div> -->
 </body>
+<!-- <script>
+function sendRequest()
+{
+  var xhr = new XMLHttpRequest();
+  var url = "check.py";
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  xhr.send();
+}
+</script> -->
 </html>
