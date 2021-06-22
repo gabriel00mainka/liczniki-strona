@@ -37,7 +37,7 @@
     <input type="button" value="Powrót do strony głównej" onClick="location.href='index.php';"></br>
     <div class="center">
         </br>
-        Aby zobaczyć pomiary przedstawione na wykresie w canvas js, naciśnij poniższy przycisk.</br></br>
+        Aby zobaczyć pomiary przedstawione na wykresie, naciśnij poniższy przycisk.</br></br>
         <input type="button" value="Zobacz wykres" onClick="location.href='wykres.php';"></br></br>
     </div>
     <div class="content">    
@@ -46,7 +46,7 @@
             <?php  
                 $zapytanie1 = "SELECT * FROM msrts_15 WHERE id_d='$number' AND id_c='$rodzaj_danych' AND date_time>='$date_start $time_start' AND date_time<='$date_stop $time_stop' ORDER BY date_time DESC";
                 $zapytanie2 = "SELECT * FROM msrts_15 WHERE id_d='$number' AND id_c=0 ORDER BY date_time DESC LIMIT 1";
-                echo"$zapytanie1";
+                // echo"$zapytanie1";
                 // echo "$number";
                 $rezultat = mysqli_query($polaczenie, $zapytanie1);
                 $rezultat2 = mysqli_query($polaczenie, $zapytanie2);
@@ -99,8 +99,8 @@
 
             ?>
             </tr>
-        </table>
         </div>
+        </table>
     </br>
 </body>
 </html>

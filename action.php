@@ -3,29 +3,8 @@
     {
         $action1 = $_POST['select1'];
         $action3 = $_POST['select3'];
-
-        if($action3=="liczydlo")
-        {
-            session_start();
-            $action3 = 0;
-            $_SESSION['rodzaj_danych'] = $action3;
-            header("Location: $action1.php");
-            exit();
-            // echo($_SESSION['rodzaj_danych']);
-            // echo($action1);
-        }
-        else    // profile
-        {
-            session_start();
-            $action3 = 1;
-            $_SESSION['rodzaj_danych'] = $action3;
-            header("Location: $action1.php");
-            exit();
-            // echo($_SESSION['rodzaj_danych']);
-            // echo($action1);
-        }
-
         $value = $_POST['number'];
+
         switch ($action1) 
         {
             case $action1:
@@ -34,7 +13,19 @@
                 $_SESSION['date_stop'] = $_POST['date_stop'];
                 $_SESSION['time_start'] = $_POST['time_start'];
                 $_SESSION['time_stop'] = $_POST['time_stop'];
-                $_SESSION['number'] = $_POST['number'];
+                $_SESSION['number'] = $value;
+
+                if($action3=="liczydlo")
+                {
+                    $type_value = 0;
+                    $_SESSION['rodzaj_danych'] = $type_value;
+                }
+                else    // profile
+                {
+                    $type_value = 1;
+                    $_SESSION['rodzaj_danych'] = $type_value;
+                }
+
                 header("Location: $action1.php");
                 exit();
                 break;
