@@ -12,21 +12,24 @@
 		$time_start = $_SESSION['time_start'];
 		$time_stop = $_SESSION['time_stop'];
 		$number = $_SESSION['number'];
+		$rodzaj_danych = $_SESSION['rodzaj_danych'];
 
-	    $zapytanie = "SELECT * FROM msrts_15 WHERE id_d='$number' AND id_c=0 AND date_time>='$date_start $time_start' AND date_time<='$date_stop $time_stop'";
+	    $zapytanie = "SELECT * FROM msrts_15 WHERE id_d='$number' AND id_c='$rodzaj_danych' AND date_time>='$date_start $time_start' AND date_time<='$date_stop $time_stop'";
 	    $rezultat = mysqli_query($polaczenie, $zapytanie);
 	    $ile = mysqli_num_rows($rezultat);
-
+		// $a = $row['date_time'];
+		// echo($a);
 	    $dataPoints = array();
-	//echo "$row['date']</br>";
 	    for($i = 0; $i <= $ile; $i++)
 	    {
+			$a = (int)$row['date_time'];
 	    	$y = $row['msrt'];
+			// echo($a);
 	    	array_push($dataPoints, array("x" => $i, "y" => $y));
 		$row = mysqli_fetch_assoc($rezultat);
 	    }    	
 ?>
-
+ 
 <!DOCTYPE html>
 <html lang=\"pl-PL\">
 <head>
@@ -47,12 +50,25 @@
 			},
 			axisX:{
 			title: "Numer pomiaru",
-			gridDashType: "line",
+			gridDashType: "timeline",
 			gridThickness: 1
 			},
 			axisY:{
 			title: "Zużycie [kWh]",
-			interval: 1
+			<?php
+			if($rodzaj_danych>0) 
+			{
+			?>
+				interval: 0.01
+			<?php
+			}
+			else
+			{
+			?>
+				interval: 5
+			<?php
+			}
+			?>
 			},
 			data: [{
 				type: "area",     
@@ -69,18 +85,6 @@
 <input type="button" value="Zobacz tabelę" onClick="location.href='dane.php';"></br></br>
 <input type="button" value="Powrót do strony głównej" onClick="location.href='index.php';"></br></br>
 
-<!-- <form action="" method="POST">
-Ustaw intrewał osi Y: 
-<input type="text" name="axis_y" value="<?php isset($_POST['axis_y']) ? htmlspecialchars($_POST['axis_y']) : '' ?>" />
-<input type="submit" name="submit" value="Zatwierdź"/>
-</form>
-<?php
-// if(isset($_POST['submit'])) 
-// {
-//   echo 'Skok na Y jest: ', htmlspecialchars($_POST['axis_y']);
-// }
-?> 
--->
 </br></br>
 
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
@@ -88,3 +92,53 @@ Ustaw intrewał osi Y:
 
 </body>
 </html>
+
+<!-- <!DOCTYPE HTML>
+<html>
+<head>  
+<script type="text/javascript">
+window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+      title:{
+        text: "Simple Date-Time Chart"
+    },
+    axisX:{
+        title: "time",
+		valueFormatString: "DD-MMM-YY hh:mm:ss",
+        gridThickness: 2
+    },
+    axisY: {
+        title: "Downloads"
+    },
+    data: [
+    {        
+        type: "area",
+        dataPoints: [//array
+        { x: new Date(2021, 04, 1), y: 26},
+        { x: new Date(2021, 04, 3), y: 38},
+        { x: new Date(2021, 04, 5), y: 43},
+        { x: new Date(2021, 04, 7), y: 29},
+        { x: new Date(2021, 04, 11), y: 41},
+        { x: new Date(2021, 04, 13), y: 54},
+        { x: new Date(2021, 04, 20), y: 66},
+        { x: new Date(2021, 04, 21), y: 60},
+        { x: new Date(2021, 04, 25), y: 53},
+        { x: new Date(2021, 04, 27), y: 60},
+		{ x: new Date(2021,05,24,15,27,00), y: 60}
+		// 2021-05-24 15:27:00
+		 
+        ]
+    }
+    ]
+});
+
+    chart.render();
+}
+</script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"> </div>
+</body>
+</html> -->

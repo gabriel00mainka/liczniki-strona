@@ -1,33 +1,46 @@
 <?php
-    if(isset($_POST['select1'])&& isset($_POST['number']))
+    if(isset($_POST['select1'])&& isset($_POST['number'])&& isset($_POST['select3']))
     {
         $action1 = $_POST['select1'];
+        $action3 = $_POST['select3'];
+
+        if($action3=="liczydlo")
+        {
+            session_start();
+            $action3 = 0;
+            $_SESSION['rodzaj_danych'] = $action3;
+            header("Location: $action1.php");
+            exit();
+            // echo($_SESSION['rodzaj_danych']);
+            // echo($action1);
+        }
+        else    // profile
+        {
+            session_start();
+            $action3 = 1;
+            $_SESSION['rodzaj_danych'] = $action3;
+            header("Location: $action1.php");
+            exit();
+            // echo($_SESSION['rodzaj_danych']);
+            // echo($action1);
+        }
+
         $value = $_POST['number'];
         switch ($action1) 
         {
-            case 'wykres':
+            case $action1:
                 session_start();
                 $_SESSION['date_start'] = $_POST['date_start'];
                 $_SESSION['date_stop'] = $_POST['date_stop'];
                 $_SESSION['time_start'] = $_POST['time_start'];
                 $_SESSION['time_stop'] = $_POST['time_stop'];
                 $_SESSION['number'] = $_POST['number'];
-                header("Location: wykres.php");
+                header("Location: $action1.php");
                 exit();
                 break;
-            case 'tabela':
-                session_start();
-                $_SESSION['date_start'] = $_POST['date_start'];
-                $_SESSION['date_stop'] = $_POST['date_stop'];
-                $_SESSION['time_start'] = $_POST['time_start'];
-                $_SESSION['time_stop'] = $_POST['time_stop'];
-                $_SESSION['number'] = $_POST['number'];
-                header("Location: dane.php");
-                exit();
-                break;
+
             default:
                 echo "Wróć do strony głównej i uzupełnij od nowa wszystkie opcje!</br>";
-                // echo "$value";
                 break;
         }
     }
@@ -37,7 +50,7 @@
         $action2 = $_POST['select2'];
         switch ($action2) 
         {
-            case 'wszystkie':
+            case $action2:
                 session_start();
                 $_SESSION['select2'] = $_POST['select2'];
                 $_SESSION['date_start1'] = $_POST['date_start1'];
@@ -48,67 +61,14 @@
                 header("Location: excel.php");
                 exit();
                 break;
-            case '1':
-                session_start();
-                $_SESSION['select2'] = $_POST['select2'];
-                $_SESSION['date_start1'] = $_POST['date_start1'];
-                $_SESSION['date_stop1'] = $_POST['date_stop1'];
-                $_SESSION['time_start1'] = $_POST['time_start1'];
-                $_SESSION['time_stop1'] = $_POST['time_stop1'];
-                // $_SESSION['number1'] = $_POST['number'];
-                header("Location: excel.php");
-                exit();
-                break;
-            case '2':
-                session_start();
-                $_SESSION['select2'] = $_POST['select2'];
-                $_SESSION['date_start1'] = $_POST['date_start1'];
-                $_SESSION['date_stop1'] = $_POST['date_stop1'];
-                $_SESSION['time_start1'] = $_POST['time_start1'];
-                $_SESSION['time_stop1'] = $_POST['time_stop1'];
-                // $_SESSION['number1'] = $_POST['number'];
-                header("Location: excel.php");
-                exit();
-                break;
-            case '3':
-                session_start();
-                $_SESSION['select2'] = $_POST['select2'];
-                $_SESSION['date_start1'] = $_POST['date_start1'];
-                $_SESSION['date_stop1'] = $_POST['date_stop1'];
-                $_SESSION['time_start1'] = $_POST['time_start1'];
-                $_SESSION['time_stop1'] = $_POST['time_stop1'];
-                // $_SESSION['number1'] = $_POST['number'];
-                header("Location: excel.php");
-                exit();
-                break;
-            case '4':
-                session_start();
-                $_SESSION['select2'] = $_POST['select2'];
-                $_SESSION['date_start1'] = $_POST['date_start1'];
-                $_SESSION['date_stop1'] = $_POST['date_stop1'];
-                $_SESSION['time_start1'] = $_POST['time_start1'];
-                $_SESSION['time_stop1'] = $_POST['time_stop1'];
-                // $_SESSION['number1'] = $_POST['number'];
-                header("Location: excel.php");
-                exit();
-                break;
-            case '5':
-                session_start();
-                $_SESSION['select2'] = $_POST['select2'];
-                $_SESSION['date_start1'] = $_POST['date_start1'];
-                $_SESSION['date_stop1'] = $_POST['date_stop1'];
-                $_SESSION['time_start1'] = $_POST['time_start1'];
-                $_SESSION['time_stop1'] = $_POST['time_stop1'];
-                // $_SESSION['number1'] = $_POST['number'];
-                header("Location: excel.php");
-                exit();
-                break;
+
             default:
                 echo "Wróć do strony głównej i uzupełnij z którego licznika chcesz pobrać pomiary!</br>";
                 // echo "$value";
                 break;
         }
     }
+
 ?>
 
 <!DOCTYPE html>

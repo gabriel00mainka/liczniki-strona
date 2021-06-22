@@ -22,7 +22,7 @@
 		</p>
 		</br>
 
-		<table width="500" align="center" border="1" bordercolor="#999999"  cellpadding="0" cellspacing="0">
+		<table width=500 align="center" border="1" bordercolor="#999999"  cellpadding="0" cellspacing="0">
 			<tr>
 				<td colspan="2">Uzupełnij aby wyświetlić pomiary</td>
 			</tr>
@@ -39,19 +39,19 @@
 					<select name="select1" style="width:145px; height:30px;">
 						<option value="wybierz_opcje" selected>Wybierz opcje</option>
 						<option name="wykres" value="wykres">Wykres</option>
-						<option name="tabela" value="tabela">Tabela</option>
+						<option name="dane" value="dane">Tabela</option>
 					</select>
 				</td>
 			</tr>
 			<tr>
-			<td>Rodzaj danych</td>
-			<td>
-			<select name="select3" style="width:145px; height:30px;">
+				<td>Rodzaj danych</td>
+				<td>
+					<select name="select3" style="width:145px; height:30px;">
 						<option value="wybierz_opcje" selected>Wybierz opcje</option>
-						<option name="liczydło" value="liczydło">liczydło</option>
+						<option name="liczydlo" value="liczydlo">liczydło</option>
 						<option name="profile" value="profile">profile</option>
 					</select>
-			</td>
+				</td>
 			<tr>
 				<td>Data od</td>
 				<td>
@@ -61,7 +61,7 @@
 			<tr>
 				<td>Data do</td>
 				<td>
-					<input type="date" style="width:140px; height:25px;" id="stop_date" name="date_stop" value="2021-05-24" min="2021-03-01" max="2080-12-31">
+					<input type="date" style="width:140px; height:25px;" id="stop_date" name="date_stop" value="2021-06-22" min="2021-03-01" max="2080-12-31">
 				</td>
 			</tr>
 			<tr>
@@ -84,13 +84,9 @@
 					</form>		
 
 		</table></br></br>
-		<!-- <div class="center">
-		Aby pobrać wszystkie pomiary naciśnij przycisk.
-		</div> -->
 	
 		<div class="center">
-			<!-- <input type="submit" name="submit" value="Pobierz" style=" background:LightGray; width:500px; height:30px;" onClick="location.href='excel.php';"> -->
-			<!-- </br></br> -->
+
 			<form action="action.php" method="post">
 			Pobierz pomiary z licznika numer: <select name="select2" style="width:120px; height:30px;">
 												<option value="wybierz_opcje" selected>Wybierz opcje</option>
@@ -105,7 +101,7 @@
 			<input type="date" style="width:130px; height:25px;" id="start_date1" name="date_start1" value="2021-04-20" min="2021-04-01" max="2080-12-31">
 			<input type="time" style="width:70px; height:25px;" id="start_time1" name="time_start1" value="00:00" min="00:00" max="23:59" required>
 			do: 
-			<input type="date" style="width:130px; height:25px;" id="stop_date1" name="date_stop1" value="2021-05-24" min="2021-03-01" max="2080-12-31">
+			<input type="date" style="width:130px; height:25px;" id="stop_date1" name="date_stop1" value="2021-06-22" min="2021-03-01" max="2080-12-31">
 			<input type="time" style="width:70px; height:25px;" id="stop_time1" name="time_stop1" value="23:59" min="00:00" max="23:59" required>
 			</br></br>
 			<input type="submit" name="submit" value="Pobierz" style=" background:LightGray; width:500px; height:30px;" onClick="location.href='excel.php';">
@@ -114,20 +110,6 @@
 	</div>
 </div>
 </br>
-<!-- <div class="center">
 
-<button type="button" onClick=sendRequest()>run</button>
-
-</div> -->
 </body>
-<!-- <script>
-function sendRequest()
-{
-  var xhr = new XMLHttpRequest();
-  var url = "check.py";
-  xhr.open("POST", url, true);
-  xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-  xhr.send();
-}
-</script> -->
 </html>
