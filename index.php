@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
     <title>Wyswietlanie w tabeli</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="styl.css" type="text/css">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script type="text/javascript" src="timer2.js"></script>
 </head>
@@ -11,8 +11,10 @@
 <body onload="odliczanie();">
 <div id="div_refresh"></div>
 <div class="center">
-	<div id="zegar"></div>
-	<ol>Projekt zespołowy - zdalne czytanie liczników energii elektrycznej</ol>
+	<div class="white">
+		<div id="zegar"></div>
+		<b><ol>Projekt zespołowy - zdalne czytanie liczników energii elektrycznej</ol></b>
+	</div>
 </div>
 </br>
 <div class="content">
@@ -22,7 +24,7 @@
 		</p>
 		</br>
 
-		<table width=500 align="center" border="1" bordercolor="#999999"  cellpadding="0" cellspacing="0">
+		<table width=500 align="center" border="1" bordercolor="#7b7fbd"  cellpadding="2" cellspacing="0">
 			<tr>
 				<td colspan="2">Uzupełnij aby wyświetlić pomiary</td>
 			</tr>
@@ -36,7 +38,7 @@
 			<tr>
 				<td>Forma prezentacji</td>
 				<td>
-					<select name="select1" style="width:145px; height:30px;">
+					<select name="select1" style="width:145px; height:30px; font-family: Arial;">
 						<option value="wybierz_opcje" selected>Wybierz opcje</option>
 						<option name="wykres" value="wykres">Wykres</option>
 						<option name="dane" value="dane">Tabela</option>
@@ -78,7 +80,7 @@
 			</tr>	
 			<tr>
 				<td colspan="2">
-					<input type="submit" name="submit" value="Zobacz pomiary" style=" background:LightGray; width:500px; height:30px;">
+					<input type="submit" name="submit" value="Zobacz pomiary" style='color:#ffffff; background:url("img/tlo_submit.jpeg"); width:500px; height:30px;'>
 				</td>
 			</tr>
 					</form>		
@@ -104,7 +106,7 @@
 			<input type="date" style="width:130px; height:25px;" id="stop_date1" name="date_stop1" value="2021-06-22" min="2021-03-01" max="2080-12-31">
 			<input type="time" style="width:70px; height:25px;" id="stop_time1" name="time_stop1" value="23:59" min="00:00" max="23:59" required>
 			</br></br>
-			<input type="submit" name="submit" value="Pobierz" style=" background:LightGray; width:500px; height:30px;" onClick="location.href='excel.php';">
+			<input type="submit" name="submit" value="Pobierz" style='color:#ffffff; background:url("img/tlo_submit.jpeg"); width:500px; height:30px;" onClick="location.href="""excel.php""";'>
 			</form>
 		</div>
 	</div>

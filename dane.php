@@ -24,7 +24,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
     <title>Wyswietlanie w tabeli</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="styl.css" type="text/css">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="timer2.js"></script>
 </head>
@@ -32,16 +32,20 @@
 <body onload="odliczanie();">
     <div id="div_refresh"></div>
     <div class="center">
-        <div id="zegar"></div>
+        <div class="white">
+            <div id="zegar"></div>
+        </div>
     </div>
-    <input type="button" value="Powrót do strony głównej" onClick="location.href='index.php';"></br>
+    <ol><input type="button" value="Powrót do strony głównej" onClick="location.href='index.php';"></br></ol>
     <div class="center">
-        </br>
-        Aby zobaczyć pomiary przedstawione na wykresie, naciśnij poniższy przycisk.</br></br>
-        <input type="button" value="Zobacz wykres" onClick="location.href='wykres.php';"></br></br>
+        <div class="white">
+            </br>
+            Aby zobaczyć pomiary przedstawione na wykresie, naciśnij poniższy przycisk.</br></br>
+            <input type="button" value="Zobacz wykres" onClick="location.href='wykres.php';"></br></br>
+        </div>
     </div>
     <div class="content">    
-        <table width="auto" align="center" border="1" bordercolor="#999999"  cellpadding="0" cellspacing="0">
+        <table width="auto" align="center" border="1" bordercolor="#7b7fbd"  cellpadding="0" cellspacing="0">
             <tr>
             <?php  
                 $zapytanie1 = "SELECT * FROM msrts_15 WHERE id_d='$number' AND id_c='$rodzaj_danych' AND date_time>='$date_start $time_start' AND date_time<='$date_stop $time_stop' ORDER BY date_time DESC";

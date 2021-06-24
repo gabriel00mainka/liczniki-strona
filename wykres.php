@@ -35,7 +35,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
     <title>Wykres</title>
-	<link rel="stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" href="styl.css" type="text/css">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script type="text/javascript" src="timer2.js"></script>
 	<script>
@@ -82,14 +82,27 @@
     
 <body>
 <div id="div_refresh"></div>
-<input type="button" value="Zobacz tabelę" onClick="location.href='dane.php';"></br></br>
+</br>
+<ol>
 <input type="button" value="Powrót do strony głównej" onClick="location.href='index.php';"></br></br>
+</ol>
+<div class="center">
+	<div class="white">
+		Aby zobaczyć pomiary przedstawione w tabeli, naciśnij poniższy przycisk.</br></br>
+		<input type="button" value="Zobacz tabelę" onClick="location.href='dane.php';"></br></br>
+	</div>
+</div>
 
 </br></br>
-
+<div class="content"> 
+<div class="white">
+<?php
+echo "Wykres zużycia energii elektrycznej z licznika numer " .$number."</br></br>";
+?>
+</div>
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
+</div>
 </body>
 </html>
 

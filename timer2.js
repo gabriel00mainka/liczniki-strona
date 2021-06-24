@@ -1,12 +1,3 @@
-// function func1()
-// 	{
-// 		document.getElementById('cls').className = "nav1";	// czerwony
-// 	}          
-
-// function func2()
-// 	{
-// 		document.getElementById('cls').className = "nav2";	// zielony
-// 	}
 
 function odliczanie()
 	{
@@ -39,12 +30,3 @@ $(document).ready(function()
 		$("#div_refresh").load("load.php");
 	}, 1000);
 });
-
-// function sendRequest()
-// {
-// 	var xhr = new XMLHttpRequest();
-// 	var url = "check.py";
-// 	xhr.open("POST",url,true);
-// 	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-// 	xhr.send();
-// }
