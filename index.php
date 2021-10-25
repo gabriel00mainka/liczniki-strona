@@ -40,7 +40,7 @@
 				<td>
 					<select name="select1" style="width:145px; height:30px; font-family: Arial;">
 						<option value="wybierz_opcje" selected>Wybierz opcje</option>
-						<option name="wykres" value="wykres">Wykres</option>
+						<option name="wykres" value="wykres">Wykres + mapa</option>
 						<option name="dane" value="dane">Tabela</option>
 					</select>
 				</td>
@@ -63,7 +63,7 @@
 			<tr>
 				<td>Data do</td>
 				<td>
-					<input type="date" style="width:140px; height:25px;" id="stop_date" name="date_stop" value="2021-06-22" min="2021-03-01" max="2080-12-31">
+					<input type="date" style="width:140px; height:25px;" id="stop_date" name="date_stop" value="<?php echo date("Y-m-d") ?>" min="2021-03-01" max="2080-12-31">
 				</td>
 			</tr>
 			<tr>

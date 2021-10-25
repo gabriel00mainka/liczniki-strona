@@ -17,18 +17,35 @@
 	    $zapytanie = "SELECT * FROM msrts_15 WHERE id_d='$number' AND id_c='$rodzaj_danych' AND date_time>='$date_start $time_start' AND date_time<='$date_stop $time_stop'";
 	    $rezultat = mysqli_query($polaczenie, $zapytanie);
 	    $ile = mysqli_num_rows($rezultat);
+
+		$zapytanie_2 = "SELECT latitude, longitude FROM `msrt_points` WHERE id_d='$number' ORDER BY date_time DESC LIMIT 1";
+		$rezultat_2 = mysqli_query($polaczenie,$zapytanie_2);
+		$row = mysqli_fetch_assoc($rezultat_2);
+		$latitude = $row['latitude'];
+		$longitude = $row['longitude'];
+		// echo($latitude);
+		// echo"</br>";
+		// echo($longitude);
+
 		// $a = $row['date_time'];
 		// echo($a);
-	    $dataPoints = array();
+		$dataPoints = array();
+	    $dataPoints1 = array();
 	    for($i = 0; $i <= $ile; $i++)
 	    {
-			$a = (int)$row['date_time'];
+			$a = $row['date_time'][0].$row['date_time'][1].$row['date_time'][2].$row['date_time'][3].",".$row['date_time'][5].$row['date_time'][6].",".$row['date_time'][8].$row['date_time'][9].",".$row['date_time'][11].$row['date_time'][12].",".$row['date_time'][14].$row['date_time'][15];
 	    	$y = $row['msrt'];
-			// echo($a);
-	    	array_push($dataPoints, array("x" => $i, "y" => $y));
-		$row = mysqli_fetch_assoc($rezultat);
+			
+			$b = "new Date(".$a.")";
+			$b = str_replace('"','',$b);
+			// echo($b);
+	    	array_push($dataPoints1, array("x" => $a, "y" => $y));
+			array_push($dataPoints, array("x" => "new Date(".$a.")", "y" => $y));
+			
+			$row = mysqli_fetch_assoc($rezultat);
 	    }    	
 ?>
+
  
 <!DOCTYPE html>
 <html lang=\"pl-PL\">
@@ -49,9 +66,9 @@
 				text: "Zużycie energii"
 			},
 			axisX:{
-			title: "Numer pomiaru",
+			title: "Data pomiaru",
 			gridDashType: "timeline",
-			gridThickness: 1
+			valueFormatString: "YYYY-MM-DD"
 			},
 			axisY:{
 			title: "Zużycie [kWh]",
@@ -72,7 +89,8 @@
 			},
 			data: [{
 				type: "area",     
-				dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+				dataPoints: <?php echo str_replace('"','', json_encode(array_slice($dataPoints,1), JSON_NUMERIC_CHECK)); ?>
+				// dataPoints: JSON.parse('<?php //echo json_encode($dataPoints, true); ?>')
 			}]
 			});
 			chart.render();
@@ -85,7 +103,8 @@
 </br>
 <ol>
 <input type="button" value="Powrót do strony głównej" onClick="location.href='index.php';"></br></br>
-</ol>
+
+
 <div class="center">
 	<div class="white">
 		Aby zobaczyć pomiary przedstawione w tabeli, naciśnij poniższy przycisk.</br></br>
@@ -93,16 +112,50 @@
 	</div>
 </div>
 
-</br></br>
+</br>
 <div class="content"> 
-<div class="white">
-<?php
-echo "Wykres zużycia energii elektrycznej z licznika numer " .$number."</br></br>";
-?>
+	<div class="white">
+		<?php
+		echo "Wykres zużycia energii elektrycznej z licznika numer " .$number."</br></br>";
+		?>
+	</div>
+	<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	</br>
+	<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2506.3252580173244!2d17.02226613576984!3d51.084004602730104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDA1JzAzLjkiTiAxN8KwMDEnMTYuOCJF!5e0!3m2!1spl!2spl!4v1633978519867!5m2!1spl!2spl" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+
+	<iframe
+		width="100%"
+		height="450"
+		style="border:0"
+		loading="lazy"
+		allowfullscreen
+		src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAvhyX816GL1E1wa_78eahMLt-EmqMChmI
+			&q=<?php print $latitude; ?>+<?php print $longitude; ?>">
+	</iframe>
+
+	<!-- <style>
+		#map{
+			height: 450px;
+			width: 100%;
+		}
+	</style>
+	<div id="map"></div>
+	<script>
+		var map;
+		function initMap(){
+			var mapPoint = {lat: 51.083742, lng: 17.022408};
+			map = new google.maps.Map(document.getElementById('map'),{
+				center: mapPoint,
+				zoom: 15
+			});
+			var marker = new google.maps.Marker({position: mapPoint, map: map})
+		}
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvhyX816GL1E1wa_78eahMLt-EmqMChmI
+				&callback=initMap" async defer></script> -->
 </div>
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-</div>
+
 </body>
 </html>
 
