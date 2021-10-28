@@ -1,6 +1,6 @@
 import serial
 
-ser = serial.Serial("/dev/ttyUSB0",9600)
+ser = serial.Serial("/dev/ttyUSB_RS-485",9600)
 ser.timeout = 1
 
 ser.write(b'\x01\x03\x00\x00\x00\x03\x05\xcb')

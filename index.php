@@ -13,7 +13,7 @@
 <div class="center">
 	<div class="white">
 		<div id="zegar"></div>
-		<b><ol>Projekt zespołowy - zdalne czytanie liczników energii elektrycznej</ol></b>
+		<b><ol>Praca inżynierska - system akwizycji i prezentacji danych z liczników energii elektrycznej z komunikacją GPRS</ol></b>
 	</div>
 </div>
 </br>
@@ -103,7 +103,7 @@
 			<input type="date" style="width:130px; height:25px;" id="start_date1" name="date_start1" value="2021-04-20" min="2021-04-01" max="2080-12-31">
 			<input type="time" style="width:70px; height:25px;" id="start_time1" name="time_start1" value="00:00" min="00:00" max="23:59" required>
 			do: 
-			<input type="date" style="width:130px; height:25px;" id="stop_date1" name="date_stop1" value="2021-06-22" min="2021-03-01" max="2080-12-31">
+			<input type="date" style="width:130px; height:25px;" id="stop_date1" name="date_stop1" value="<?php echo date("Y-m-d") ?>" min="2021-03-01" max="2080-12-31">
 			<input type="time" style="width:70px; height:25px;" id="stop_time1" name="time_stop1" value="23:59" min="00:00" max="23:59" required>
 			</br></br>
 			<input type="submit" name="submit" value="Pobierz" style='color:#ffffff; background:url("img/tlo_submit.jpeg"); width:500px; height:30px;" onClick="location.href="""excel.php""";'>

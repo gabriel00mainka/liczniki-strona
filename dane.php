@@ -36,7 +36,7 @@
             <div id="zegar"></div>
         </div>
     </div>
-    <ol><input type="button" value="Powrót do strony głównej" onClick="location.href='index.php';"></br></ol>
+    <input type="button" value="Powrót do strony głównej" onClick="location.href='index.php';">
     <div class="center">
         <div class="white">
             </br>
@@ -63,14 +63,14 @@
 
                 echo'<div class="white">';
                     exec('cd /var/www/html/liczniki');
-                    shell_exec('sudo chmod 777 1.py');
-                    $a = shell_exec('python3 1.py');
+                    shell_exec('sudo chmod 777 read_metter_now.py');
+                    $a = shell_exec('python3 read_metter_now.py');
 
                     echo "Pomiary wyświetlane z licznika numer ".$number."</br>";
                     echo'Aktualny stan licznika wynosi: '.$a;
                     echo'<input type="button" value="Zczytaj aktualny stan licznika" onClick="window.location.reload()"></br>';
                     echo "Najnowszy pomiar: ".$a2."</br>";
-                    echo "Ilość pomiarów w bazie w zadanym przedziale: ".$ile;
+                    echo "Ilość pomiarów w bazie w zadanym przedziale czasowym: ".$ile;
                 echo "</div>";   
             ?>
         </div>
