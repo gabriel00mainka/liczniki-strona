@@ -53,16 +53,11 @@
 			array_push($dataPoints, array("x" => "new Date(".$a.")", "y" => $y,"label" =>'\''.$time_to_label.'\''));
 			
 			$row = mysqli_fetch_assoc($rezultat);
+
+			$result = $row_do['msrt']-$row_od['msrt'];
+			$result = round($result/4,1);
 	    }    	
 ?>
-<?php
-	$result = $row_do['msrt']-$row_od['msrt'];
-	$result = round($result/4,1);
-	// echo($result);echo"</br>";
-	// $result = round($result/4,1);
-	// echo($result);
-?>
-
  
 <!DOCTYPE html>
 <html lang=\"pl-PL\">
